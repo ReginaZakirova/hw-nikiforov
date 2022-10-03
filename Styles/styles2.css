@@ -1,0 +1,97 @@
+body{
+    background-color:  gray;
+}
+header{
+   background-color: blanchedalmond;
+    height: 100px;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.Familia{
+    text-align: center;
+    font-family: Luminari;
+    color: orange;
+    border-top: 2px solid black;
+}
+.navigation{
+    font-family: 'Trebuchet MS';
+    font-size: 20;
+    display: flex;
+    justify-content: flex-end;
+}
+.AboutMe{
+    font-family: 'Trebuchet MS';
+    font-size: 20;
+    padding: 10px;
+
+}
+.Myfoto{
+    width: 100%;
+}
+.Otziv{
+    font-family: 'Trebuchet MS';
+    font-size: 20;
+    padding: 10px;
+}
+
+.Information{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.Grid1{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+}
+.Grid2{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+}
+.GridPic{
+    text-align: center;
+    font-family:'Arial Narrow Bold';
+    font-size: 24;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+@media screen and (max-width: 820px)  {
+    .Grid1{
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    .Grid2{
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    .Information{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    
+}
+@media screen and (max-width: 480px)  {
+    .Grid1{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    .Grid2{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    .Information{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    
+}

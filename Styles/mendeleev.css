@@ -1,0 +1,44 @@
+table,td{
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption{
+    font-weight: bold;
+}
+.Element{
+    padding: 5px;
+}
+.Element, span{
+    display: block;
+}
+.nomer{
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+}
+.bukva{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align:top;
+}
+.nazvanie{
+    text-align: left;
+    vertical-align: bottom;
+    font-weight: bold;
+}
+.massa{
+    font-size:10px ;
+    text-align: right;
+    vertical-align: middle;
+}
+.Red{
+    background-color: indianred;
+}
+.Yellow{
+    background-color: goldenrod;
+}
+.Blue{
+    background-color: cornflowerblue;
+}
