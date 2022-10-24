@@ -20,7 +20,8 @@ header{
     font-family: 'Trebuchet MS';
     font-size: 20;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: flex-end; 
 }
 .AboutMe{
     font-family: 'Trebuchet MS';

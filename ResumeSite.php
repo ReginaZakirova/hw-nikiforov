@@ -14,7 +14,11 @@
       <section class="navigation">
       <nav>
         <ul>
+          <li><a href="Str.php">Строки</a> </li>
+          <li><a href="Cicles.php">Циклы</a> </li>
+          <li><a href="Massive.php">Массивы</a> </li>
           <li><a href="table.html">Таблица Менделеева</a> </li>
+          <li><a href="autorisation.php">Авторизация</a></li>
         </ul>
       </nav>
     </section>
@@ -27,17 +31,44 @@
   <img class="Myfoto" src="Images/MyFoto.jpeg">
 </div>
 <div class="AboutMe">
-  <?php
-  $str = 'Всем привет! Немного информации обо мне. Работаю реабилитологом! В свободное от работы время занимаюсь дизайном, а также довольно успешно увлекаюсь Stand Upом, выступаю со сцены вот уже 2 года!';
-echo $str;
-  
+  <?php 
+$strAbout = "Всем привет! Немного информации обо мне. Работаю реабилитологом! В свободное от работы время занимаюсь дизайном, а также довольно успешно увлекаюсь Stand Upом, выступаю со сцены вот уже 2 года!";
+$strAboutColor = mb_substr($strAbout, 0,12);
+print "<span style='color:red;'> $strAboutColor  </span>";
+echo mb_substr($strAbout, 12);
 ?>
-    </div>
+</div>
 
   <div class="Otziv">
-    Первые занятия прошли отлично! Понравилось, что в некоторой информации нужно разбираться и искать самому, что лишь побуждает больше погружаться в обучение!
+  <?php
+  $str = 'Первые занятия прошли отлично! Понравилось, что в некоторой информации нужно разбираться и искать самому, что лишь побуждает больше погружаться в обучение!';
+  $str_mass = explode(' ', $str);
+  for($i = 0; $i < count($str_mass); $i++){
+    if($i % 2 == 0)
+      echo "<span style='color:red;'> $str_mass[$i]  </span>";
+      else {
+        echo "<span style='color:yellow;'> $str_mass[$i]  </span>";
+      }
+  }
+
+?>
   </div> 
 </div>
+<p>
+  <?php
+  $strCountVowels = "Всем привет! Немного информации обо мне. Работаю реабилитологом! В свободное от работы время занимаюсь дизайном, а также довольно успешно увлекаюсь Stand Upом, выступаю со сцены вот уже 2 года! Первые занятия прошли отлично! Понравилось, что в некоторой информации нужно разбираться и искать самому, что лишь побуждает больше погружаться в обучение ";
+  /*$vowels = array('а','у','о','ы','э','я','ю','ё','и','е', 'А','У','О','Ы','Э','Я','Ю','Ё','И','Е');
+  $count_vowels = 0;
+  for($i = 0; $i < strlen($strCountVowels); $i++){*/
+    $str_slova = explode(' ', $strCountVowels);
+    //print_r($str_slova);
+    for($i = 0; $i <= count($str_slova); $i++){
+      echo count($str_slova);
+      break;
+    }
+    
+  ?>
+</p>
 </section>
     <p>
   <section class="container">
@@ -81,4 +112,16 @@ echo $str;
   </section>
     </p>
 </body>
+<footer>
+<?php
+$bd = date('d-m-Y', mktime(0, 0, 0, 06, 27, 1994));
+echo " Мой день рождения $bd";
+echo '<br>';
+$nd = date('d-m-Y');
+echo " Текущая дата $nd";
+echo '<br>';
+$datediff = date_diff(new DateTime(), new DateTime('1994-06-27'))->days;
+echo 'Разница между датами' . $datediff . 'дней';
+?>
+</footer>
 </html>
