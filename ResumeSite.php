@@ -12,7 +12,7 @@
         <img src="Images/planet.png" class="logo">
         </div>
       <section class="navigation">
-      <nav>
+      <nav class="navigator">
         <ul>
           <li><a href="Str.php">Строки</a> </li>
           <li><a href="Cicles.php">Циклы</a> </li>
@@ -36,6 +36,8 @@ $strAbout = "Всем привет! Немного информации обо �
 $strAboutColor = mb_substr($strAbout, 0,12);
 print "<span style='color:red;'> $strAboutColor  </span>";
 echo mb_substr($strAbout, 12);
+
+
 ?>
 </div>
 
@@ -43,6 +45,7 @@ echo mb_substr($strAbout, 12);
   <?php
   $str = 'Первые занятия прошли отлично! Понравилось, что в некоторой информации нужно разбираться и искать самому, что лишь побуждает больше погружаться в обучение!';
   $str_mass = explode(' ', $str);
+  function otziv($str_mass){
   for($i = 0; $i < count($str_mass); $i++){
     if($i % 2 == 0)
       echo "<span style='color:red;'> $str_mass[$i]  </span>";
@@ -50,6 +53,9 @@ echo mb_substr($strAbout, 12);
         echo "<span style='color:yellow;'> $str_mass[$i]  </span>";
       }
   }
+}
+$otziv = otziv($str_mass);
+echo $otziv;
 
 ?>
   </div> 
@@ -61,11 +67,17 @@ echo mb_substr($strAbout, 12);
   $count_vowels = 0;
   for($i = 0; $i < strlen($strCountVowels); $i++){*/
     $str_slova = explode(' ', $strCountVowels);
+
     //print_r($str_slova);
+    function countwords($str_slova){
     for($i = 0; $i <= count($str_slova); $i++){
-      echo count($str_slova);
+      echo  count($str_slova);
       break;
     }
+  }
+  $countwords = countwords($str_slova);
+  echo " Количество слов в информации о себе   $countwords";
+    
     
   ?>
 </p>
