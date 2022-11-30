@@ -1,5 +1,5 @@
 body{
-    background-color:  gray;
+    background-color:  #808080;
 }
 header{
    background-color: blanchedalmond;
@@ -9,6 +9,12 @@ header{
     width: 80px;
     height: 80px;
     float: left;
+}
+.LoginName{
+    font-family: 'Trebuchet MS';
+    font-size: 20;
+    display: flex;
+    justify-content: flex-end;   
 }
 .Familia{
     text-align: center;
@@ -22,6 +28,13 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: flex-end; 
+}
+.navigator{
+    font-family: 'Trebuchet MS';
+    font-size: 15;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 .AboutMe{
     font-family: 'Trebuchet MS';

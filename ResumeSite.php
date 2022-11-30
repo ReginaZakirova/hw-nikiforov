@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,23 +9,32 @@
 <link rel="stylesheet" href="Styles/styles2.css">
 <title>Resume</title>
 </head>
-<body>
-    <header> 
-      <div class="logo">
-        <img src="Images/planet.png" class="logo">
-        </div>
-      <section class="navigation">
-      <nav class="navigator">
-        <ul>
-          <li><a href="Str.php">Строки</a> </li>
-          <li><a href="Cicles.php">Циклы</a> </li>
-          <li><a href="Massive.php">Массивы</a> </li>
-          <li><a href="table.html">Таблица Менделеева</a> </li>
-          <li><a href="autorisation.php">Авторизация</a></li>
-        </ul>
-      </nav>
-    </section>
-    </header>
+<body style="background-color: <?=changeCol($_SESSION["BackgroundCol"])?>">
+<?php
+$_SESSION['BackgroundCol'] = $_POST['sitecol'];
+
+ function changeCol($color){
+  if($color=='ciancol'){
+      echo "#e0ffff";
+  }elseif($color=='greencol'){
+      echo  "#006400";
+  }elseif($color=='pinkcol'){
+      echo  "#ffe4e1";
+  }
+elseif($color=='original'){
+  echo  "#808080";
+}
+}
+?>
+<div class = "LoginName">
+  <?php
+  echo $_SESSION['Login'];
+  ?>
+
+</div>
+<?php
+include "header.php";
+?>
     <div class="Familia">
       <h1>Никифоров Никита</h1>
   </div>
@@ -124,16 +136,7 @@ echo $otziv;
   </section>
     </p>
 </body>
-<footer>
 <?php
-$bd = date('d-m-Y', mktime(0, 0, 0, 06, 27, 1994));
-echo " Мой день рождения $bd";
-echo '<br>';
-$nd = date('d-m-Y');
-echo " Текущая дата $nd";
-echo '<br>';
-$datediff = date_diff(new DateTime(), new DateTime('1994-06-27'))->days;
-echo 'Разница между датами' . $datediff . 'дней';
-?>
-</footer>
+    include "footer.php";
+    ?>
 </html>

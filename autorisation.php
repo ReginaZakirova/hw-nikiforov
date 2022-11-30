@@ -1,25 +1,6 @@
 <?php
-/*if(!empty($_POST)){ 
-    if($_POST['login'] == 'Nick' and $_POST['password'] == 1){ 
-        session_start(); 
-        $_SESSION['login'] = $_POST['login']; 
-        $log = $_SESSION['login'];
-        $str = "Доступ открыт   $log"; 
-        //print_r($_SESSION); 
-    }
-    else{
-       $str = "Доступ закрыт!"; 
-    }
-} 
-/*$log = 0; 
-$sessname = session_name(); 
-if(isset($_COOKIE[$sessname])){ 
-    session_start(); 
-    $log = $_SESSION['login']; 
-} 
-else{ 
-    $log = 'empty'; 
-}*/
+session_start(); 
+
 ?>
 
 <!doctype html>
@@ -47,7 +28,6 @@ else{
 <?php 
 // логины: Nikita, Regina пароль: 1
 //echo md5('1');
-session_start(); 
 require ('connect.php'); 
 if(isset($_POST['login']) and isset($_POST['password'])){ 
     $username = $_POST['login']; 
@@ -68,8 +48,16 @@ if(isset($_SESSION['Login'])){
     echo "Привет  $username  "; 
 
 } 
+
 /*echo $str;*/ 
 ?>
+<p>
+<a href="fact.php">Страница Fact</a>
+</p>
+<a href="bitrix.php">Страница Bitrix</a>
+</p>
+<p>
+   <?php echo 'Вы посещали страницу' . $_SESSION['lastvisit'];?>
 </p>
 </form>
 </body>
